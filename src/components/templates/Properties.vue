@@ -1,14 +1,14 @@
 <template>
     <div>
-        <Text />
+        <TextProperty />
     </div>
 </template>
 
 <script>
-    import Text from './properties/Text'
+    import TextProperty from './properties/TextProperty'
     export default {
         components:{
-            Text
+            TextProperty
         }
     }
 </script>

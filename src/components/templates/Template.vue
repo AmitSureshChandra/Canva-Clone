@@ -30,12 +30,27 @@
       </div>
     </div>
 
-    <div class="border border-0 mt-3" style="height : 500px"></div>
+    <div class="border border-0 mt-3" style="height : 500px" >
+      <canvas height="500px" width="600px" ref="template"></canvas>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import {fabric} from 'fabric'
+
+export default {
+  mounted(){
+      const ref = this.$refs.template;
+      const canvas = new fabric.Canvas(ref);
+      const rect = new fabric.Rect({
+        fill: 'red',
+        width: 20,
+        height: 20
+      });
+      canvas.add(rect);
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>

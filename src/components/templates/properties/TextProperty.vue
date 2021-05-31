@@ -1,15 +1,15 @@
 <template>
     <div class="d-flex align-content-center">
-        <div>
+        <!-- <div>
             <i class="fas fa-bold"></i>
-        </div>
-        asdsa
+        </div> -->
+       
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Text'
+        name: 'TextProperty'
     }
 </script>
 

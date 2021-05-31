@@ -1,7 +1,6 @@
 <template>
   <div class="d-flex">
     <Properties />
-
     <Template />
   </div>
 </template>
