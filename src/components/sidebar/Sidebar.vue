@@ -1,19 +1,20 @@
 <template>
-    <div>
-        <Toolbar />
-    </div>
+  <div class="flex flex-row">
+    <Toolbar />
+    <expandable />
+  </div>
 </template>
 
 <script>
-    import Toolbar from './Toolbar'
+import Expandable from "./Expandable";
+import Toolbar from "./Toolbar";
 
-    export default {
-        components:{
-            Toolbar
-        }    
-    }
+export default {
+  components: {
+    Toolbar,
+    Expandable,
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
