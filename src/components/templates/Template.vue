@@ -30,26 +30,75 @@
       </div>
     </div>
 
-    <div class="border border-0 mt-3" style="height : 500px" >
-      <canvas height="500px" width="600px" ref="template"></canvas>
+    <div class="border border-0 mt-3" style="height : 500px">
+      <div @drop="drop" @dragover="allowDrop">
+        <canvas height="500px" width="600px" ref="template"></canvas>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import {fabric} from 'fabric'
+import { fabric } from "fabric";
 
 export default {
-  mounted(){
-      const ref = this.$refs.template;
-      const canvas = new fabric.Canvas(ref);
-      const rect = new fabric.Rect({
-        fill: 'red',
-        width: 20,
-        height: 20
-      });
-      canvas.add(rect);
-  }
+  data() {
+    return {
+      canvas: null,
+      clientX: 0,
+      clientY: 0,
+    };
+  },
+  mounted() {
+    const ref = this.$refs.template;
+    this.canvas = new fabric.Canvas(ref);
+    const rect = new fabric.Rect({
+      fill: "red",
+      width: 20,
+      height: 20,
+    });
+    this.canvas.add(rect);
+  },
+  methods: {
+    drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+
+      let canvasBox = this.$refs.template.getBoundingClientRect();
+
+      var pugImg = new Image();
+      pugImg.onload = () => {
+        let left = this.clientX - canvasBox.x;
+        let top = this.clientY - canvasBox.y;
+        let width = pugImg.width ?? 300;
+        let height = pugImg.height ?? 300;
+
+        console.log({ left });
+        console.log({ top });
+
+        var pug = new fabric.Image(pugImg, {
+          // angle: 45,
+          width,
+          height,
+          left,
+          top,
+          scaleX: 0.25,
+          scaleY: 0.25,
+        });
+        this.canvas.add(pug);
+      };
+      pugImg.src = data;
+    },
+
+    allowDrop(ev) {
+      ev.preventDefault();
+      this.clientX = ev.clientX;
+      this.clientY = ev.clientY;
+
+      console.log({ clientX: this.clientX });
+      console.log({ clientY: this.clientY });
+    },
+  },
 };
 </script>
 
