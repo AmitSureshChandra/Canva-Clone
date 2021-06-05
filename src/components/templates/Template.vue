@@ -32,7 +32,7 @@
 
     <div class="border border-0 mt-3" style="height : 500px">
       <div @drop="drop" @dragover="allowDrop">
-        <canvas height="500px" width="600px" ref="template"></canvas>
+        <canvas ref="template"></canvas>
       </div>
     </div>
   </div>
@@ -72,9 +72,6 @@ export default {
         let top = this.clientY - canvasBox.y;
         let width = pugImg.width ?? 300;
         let height = pugImg.height ?? 300;
-
-        console.log({ left });
-        console.log({ top });
 
         var pug = new fabric.Image(pugImg, {
           // angle: 45,

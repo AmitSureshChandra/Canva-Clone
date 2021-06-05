@@ -1,7 +1,7 @@
 <template>
   <div id="toolbar">
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items" @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-columns"></i>
         <span>
           Template
@@ -10,7 +10,7 @@
     </div>
 
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items"  @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-image"></i>
         <span>
           Photos
@@ -19,7 +19,7 @@
     </div>
 
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items"  @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-shapes"></i>
         <span>
           Elements
@@ -28,7 +28,7 @@
     </div>
 
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items"  @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-font"></i>
         <span>
           Texts
@@ -37,7 +37,7 @@
     </div>
 
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items"  @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-music"></i>
         <span>
           Audio
@@ -46,7 +46,7 @@
     </div>
 
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items"  @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-video"></i>
         <span>
           Video
@@ -55,7 +55,7 @@
     </div>
 
     <div class="">
-      <button class="toolbar-items" style="width: 100%">
+      <button class="toolbar-items"  @click="$emit('onClickToolbarBtn', 'template')" style="width: 100%">
         <i class="fas fa-chalkboard"></i>
         <span>
           Background
